@@ -1,48 +1,42 @@
-# Flight Price Prediction Project
+# Flight Price Prediction Model
 
-This project aims to predict flight ticket prices based on various features such as airline, date of journey, source, destination, and other flight-related factors. The goal is to analyze these features and build a model that can accurately predict flight prices.
+This repository contains a project focused on analyzing flight price data to understand patterns and factors that influence flight costs. The project covers data exploration, visualization, and feature analysis, providing insights into factors affecting flight prices.
 
 ## Project Overview
 
-Flight prices are influenced by numerous factors, including airline type, time of travel, and class. This project explores these factors and uses machine learning techniques to develop a predictive model that can estimate flight prices. The notebook includes detailed data exploration, preprocessing, model training, and evaluation.
+The goal of this project is to explore a dataset related to flight prices, analyze relationships between various features (such as time of day, airline, and duration), and understand how these factors contribute to price variation. The project also provides a foundation for developing a flight price prediction model.
 
-## Key Features of the Project
+### Key Steps in the Process
+1. **Data Cleaning**: Handling missing values and preparing data for analysis.
+2. **Data Exploration**: Analyzing key statistics and distributions of features.
+3. **Feature Analysis**: Investigating relationships between flight price and influential factors.
+4. **Visualization**: Using plots and graphs to highlight trends and relationships within the dataset.
 
-1. **Data Preprocessing**: Handling missing values, encoding categorical variables, and feature scaling.
-2. **Exploratory Data Analysis (EDA)**: Investigating the relationships between different features and flight prices.
-3. **Feature Engineering**: Extracting useful information, such as day, month, and duration from existing features.
-4. **Model Building**: Training machine learning models to predict flight prices.
-5. **Model Evaluation**: Using metrics like Mean Absolute Error (MAE) and R² score to evaluate model performance.
+## Dataset
 
-## Datasets
+The dataset includes several features relevant to flight prices, such as airline, date of journey, departure and arrival times, duration, and price.
 
-This project uses two datasets:
+### Features in the Dataset
 
-- **Data_Train.xlsx**: The training dataset containing historical data of flight prices and other relevant features.
-- **Data_Test.xlsx**: The test dataset for evaluating the model's performance on unseen data.
-
-### Key Columns in the Dataset
-
-- **Airline**: The airline operating the flight.
-- **Date_of_Journey**: The date of the journey.
-- **Source**: The starting point of the journey.
-- **Destination**: The endpoint of the journey.
-- **Route**: The route taken by the flight.
+- **Airline**: The airline providing the flight service.
+- **Date_of_Journey**: The date of the flight.
+- **Departure Time**: Scheduled departure time.
+- **Arrival Time**: Scheduled arrival time.
 - **Duration**: Total flight duration.
-- **Total_Stops**: Number of stops between source and destination.
-- **Price**: Ticket price (only available in the training dataset).
+- **Total Stops**: Number of stops between source and destination.
+- **Price**: Price of the flight ticket.
 
-## Files in This Repository
+## Project Files
 
-- **Flight-Prediction.ipynb**: The main notebook for data analysis, model training, and evaluation.
-- **Data_Train.xlsx**: The training dataset.
-- **Data_Test.xlsx**: The testing dataset.
+- **Flight-Prediction.ipynb**: The main notebook containing the full analysis, from data loading to visualization.
+- **Data_Train.xlsx**: The primary dataset used for training the model.
+- **Data_Test.xlsx**: A secondary dataset used for testing or additional analysis.
 
-## Installation and Setup
+## Installation
 
-To run this project, you will need:
+To run this project locally, you will need:
 
-- Python 3.x
+- Python (version 3.x)
 - Jupyter Notebook
 - Required libraries (install using `pip install -r requirements.txt` if a requirements file is provided)
 
@@ -52,36 +46,44 @@ To run this project, you will need:
 - numpy
 - matplotlib
 - seaborn
-- scikit-learn
 
 ## Process and Analysis Steps
 
-The following steps were followed in the analysis:
+1. **Data Overview**:
+   - A preliminary overview of the dataset was conducted to understand the structure, including the number of entries and range of feature values.
 
-1. **Data Loading and Cleaning**:
-   - Load the datasets and check for missing values.
-   - Handle missing values and encode categorical variables.
+   ![Dataset Overview](images/dataset_overview.png)
+
+2. **Number of Flights vs. Time of Day**:
+   - Analyzed the distribution of flight frequency across different times of the day, providing insights into peak and off-peak flight schedules.
    
-2. **Exploratory Data Analysis**:
-   - Generate summary statistics for key variables.
-   - Visualize the distribution of features like price, duration, and total stops.
+   ![Number of Flights vs. Time of Day](images/flights_vs_time.png)
+
+3. **Box Plot (Price vs. Airline)**:
+   - A box plot was created to analyze the distribution of prices for different airlines, highlighting price variations and identifying premium carriers.
+
+   ![Price vs Airline](images/price_vs_airline.png)
+
+4. **Density Graphs for Outlier Removal**:
+   - Density graphs were used to detect and visualize potential outliers in the dataset. These visualizations helped identify extreme values in features such as price and duration, which could be considered for removal to improve model performance.
    
-3. **Feature Engineering**:
-   - Extract additional features such as day, month, and duration from date and time fields.
-   - Convert categorical features (e.g., airline, source, destination) to numerical representations.
+   ![Density Graphs for Outlier Removal](images/density_outlier_removal.png)
 
-4. **Model Building**:
-   - Train several machine learning models such as Linear Regression, Decision Tree, and Random Forest to predict flight prices.
+5. **Distribution of Price vs. Stops**:
+   - A distribution plot was created to analyze the relationship between flight price and the number of stops. This plot revealed insights into how additional stops affect ticket prices, with direct flights generally priced higher than multi-stop flights.
    
-5. **Model Evaluation**:
-   - Evaluate the models using Mean Absolute Error (MAE) and R² score to determine the best-performing model.
+   ![Distribution of Price vs Stops](images/price_vs_stops.png)
 
-## Results and Insights
+## Results
 
-The analysis revealed several insights:
+After completing the data analysis process, several insights were gained:
 
-- **Price Factors**: Certain airlines, shorter durations, and direct flights contribute significantly to price variations.
-- **Feature Importance**: Features like airline type, source, destination, and total stops have a strong impact on flight prices.
-- **Model Performance**: The best-performing model achieved an MAE of X and an R² score of Y (replace with actual values).
+- **Dataset Overview**: The data structure was thoroughly examined to identify missing values, potential outliers, and statistical summaries.
+- **Flight Frequency by Time of Day**: The analysis showed distinct patterns in flight frequency, with certain times of day experiencing higher flight volumes.
+- **Price Variability Across Airlines**: The box plot indicated significant variation in prices among different airlines, reflecting the pricing strategies and service levels of various carriers.
+- **Outlier Detection**: Density graphs assisted in identifying outliers within critical features, which may impact the accuracy of predictive models.
+- **Impact of Stops on Price**: The distribution plot of price vs. stops highlighted that flights with fewer stops are typically priced higher, aligning with passenger preferences for convenience.
 
-These findings could assist both airlines and customers in understanding factors that affect flight pricing.
+These insights lay the groundwork for developing a predictive model that accurately captures pricing patterns based on key features such as airline, time of day, duration, and number of stops.
+
+
