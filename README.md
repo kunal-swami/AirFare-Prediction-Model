@@ -52,27 +52,27 @@ To run this project locally, you will need:
 1. **Data Overview**:
    - A preliminary overview of the dataset was conducted to understand the structure, including the number of entries and range of feature values.
 
-   ![Dataset Overview](images/dataset_overview.png)
+   ![Dataset Overview](images/dataset_overview.jpg)
 
 2. **Number of Flights vs. Time of Day**:
    - Analyzed the distribution of flight frequency across different times of the day, providing insights into peak and off-peak flight schedules.
    
-   ![Number of Flights vs. Time of Day](images/flights_vs_time.png)
+   ![Number of Flights vs. Time of Day](images/flights_vs_time.jpg)
 
 3. **Box Plot (Price vs. Airline)**:
    - A box plot was created to analyze the distribution of prices for different airlines, highlighting price variations and identifying premium carriers.
 
-   ![Price vs Airline](images/price_vs_airline.png)
+   ![Price vs Airline](images/price_vs_airline.jpg)
 
 4. **Density Graphs for Outlier Removal**:
    - Density graphs were used to detect and visualize potential outliers in the dataset. These visualizations helped identify extreme values in features such as price and duration, which could be considered for removal to improve model performance.
    
-   ![Density Graphs for Outlier Removal](images/density_outlier_removal.png)
+   ![Density Graphs for Outlier Removal](images/density_outlier_removal.jpg)
 
 5. **Distribution of Price vs. Stops**:
    - A distribution plot was created to analyze the relationship between flight price and the number of stops. This plot revealed insights into how additional stops affect ticket prices, with direct flights generally priced higher than multi-stop flights.
    
-   ![Distribution of Price vs Stops](images/price_vs_stops.png)
+   ![Distribution of Price vs Stops](images/price_vs_stops.jpg)
 
 ## Results
 
